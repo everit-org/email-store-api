@@ -1,28 +1,28 @@
-package org.everit.email.store.api;
+package org.everit.email.store;
 
 import org.everit.email.Email;
 
 /**
- * A store that can persist email.
+ * Persistent store of emails.
  */
 public interface EmailStore {
 
   /**
    * Deletes an email permanently.
    *
-   * @param emailStoreId
+   * @param emailId
    *          The identifier of the stored email that should be deleted.
    */
-  void delete(long emailStoreId);
+  void delete(long emailId);
 
   /**
    * Reads email based on email store identifier.
    *
-   * @param emailStoreId
+   * @param emailId
    *          the identifier of stored email.
    * @return the stored email. Return <code>null</code> if not found email.
    */
-  Email read(long emailStoreId);
+  Email read(long emailId);
 
   /**
    * Save email to store.
