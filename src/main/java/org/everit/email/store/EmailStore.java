@@ -25,19 +25,19 @@ public interface EmailStore {
   /**
    * Deletes an email permanently.
    *
-   * @param emailId
+   * @param storedEmailId
    *          The identifier of the stored email that should be deleted.
    */
-  void delete(long emailId);
+  void delete(long storedEmailId);
 
   /**
    * Reads email based on email store identifier.
    *
-   * @param emailId
+   * @param storedEmailId
    *          the identifier of stored email.
    * @return the stored email. Return <code>null</code> if not found email.
    */
-  Email read(long emailId);
+  Email read(long storedEmailId);
 
   /**
    * Save email to store.
