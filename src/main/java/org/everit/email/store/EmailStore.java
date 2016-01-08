@@ -43,8 +43,11 @@ public interface EmailStore {
    * Save email to store.
    *
    * @param email
-   *          the {@link Email} object that will be store.
+   *          the {@link Email} object that will be store. Cannot be <code>null</code>!
    * @return the stored email identifier.
+   *
+   * @throws NullPointerException
+   *           if email parameter is <code>null</code>.
    */
   long save(Email email);
 
