@@ -27,6 +27,9 @@ public interface EmailStore {
    *
    * @param storedEmailId
    *          The identifier of the stored email that should be deleted.
+   *
+   * @throws NonExistentEmailException
+   *           if stored email not exists.
    */
   void delete(long storedEmailId);
 
