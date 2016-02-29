@@ -23,32 +23,32 @@ import org.everit.email.Email;
 public interface EmailStore {
 
   /**
-   * Deletes an email permanently.
-   *
-   * @param storedEmailId
-   *          The identifier of the stored email that should be deleted.
-   */
-  void delete(long storedEmailId);
-
-  /**
    * Reads email based on email store identifier.
    *
-   * @param storedEmailId
-   *          the identifier of stored email.
+   * @param emailPersistentId
+   *          the identifier of the email in the store.
    * @return the stored email. Return <code>null</code> if not found email.
    */
-  Email read(long storedEmailId);
+  Email read(long emailPersistentId);
 
   /**
-   * Save email to store.
+   * Removes the email from the store.
+   *
+   * @param emailPersistentId
+   *          the identifier of the email in the store.
+   */
+  void remove(long emailPersistentId);
+
+  /**
+   * Store email.
    *
    * @param email
-   *          the {@link Email} object that will be store. Cannot be <code>null</code>!
-   * @return the stored email identifier.
+   *          the {@link Email} object that will be stored. Cannot be <code>null</code>.
+   * @return The identifier of the email in the store.
    *
    * @throws NullPointerException
    *           if email parameter is <code>null</code>.
    */
-  long save(Email email);
+  long store(Email email);
 
 }
