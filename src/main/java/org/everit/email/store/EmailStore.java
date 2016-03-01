@@ -36,6 +36,9 @@ public interface EmailStore {
    *
    * @param emailPersistentId
    *          the identifier of the email in the store.
+   *
+   * @throws NonExistentEmailException
+   *           if stored email not exists.
    */
   void remove(long emailPersistentId);
 
